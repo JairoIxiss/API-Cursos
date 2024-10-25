@@ -1,7 +1,7 @@
 <h1 align="center"> API para un Estudiante </h1>
 <div align="justify">
 API diseñada para que un estudiante pueda llevar el control de los temas que aprendió de diferentes cursos, con la posibilidad de crear, buscar y editar cursos y temas. 
-Todo esto con el lenguaje de programación Java, implementando una API REST usando el FrameWork Spring Boot. Como proveedor de ORM se utilizó JPA + Hibernate. Para realizar las pruebas de la API se utilizó Postman. Y todos los objetos fueron almacenados en una base de datos MySQL con la herramienta de PhpMyAdmin.
+Todo esto con el lenguaje de programación Java con buenas prácticas y con arquitectura multicapas, implementando una API REST usando el FrameWork Spring Boot. Como proveedor de ORM se utilizó JPA + Hibernate. Para realizar las pruebas de la API se utilizó Postman. Y todos los objetos fueron almacenados en una base de datos MySQL con la herramienta de PhpMyAdmin.
 </div>
 
 ## Modelado

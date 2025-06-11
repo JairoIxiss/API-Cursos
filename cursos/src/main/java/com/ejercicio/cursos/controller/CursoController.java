@@ -23,7 +23,12 @@ public class CursoController {
     public List<Curso> traerCursos(){
         return curServ.getCursos();
     }
-    
+
+    @GetMapping("/cursos/traer/{id}")
+    public Curso traerCurso(@PathVariable Long id){
+        return curServ.findCurso(id);
+    }
+
     @PutMapping("/cursos/editar/{id}")
     public Curso editarCurso(@PathVariable Long id, @RequestBody Curso cur){
         curServ.editCurso(id, cur);

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style-crear-curso.css">
+    <title>Crear Tema</title>
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <div class="form-wrapper">
+            <h2>Datos del Curso</h2>
+
+            <div id="mensaje" class="mensaje"></div>
+
+            <form id="cursoForm">
+                <div class="input-flex">
+                    <div>
+                        <input type="text" name="nombreCurso" id="nombreCurso" placeholder="Curso de Java"
+                            class="form-input" required />
+                        <label for="nombreCurso" class="form-label">Nombre del curso</label>
+                    </div>
+                    <div>
+                        <input type="text" name="modalidadCurso" id="modalidadCurso" placeholder="Presencial / Online"
+                            class="form-input" required />
+                        <label for="modalidadCurso" class="form-label">Modalidad</label>
+                    </div>
+                    <div>
+                        <input type="date" name="fechaCurso" id="fechaCurso" class="form-input" required />
+                        <label for="fechaCurso" class="form-label">Fecha finalización</label>
+                    </div>
+                </div>
+
+                <h3>Temas</h3>
+                <div id="temasContainer">
+                </div>
+
+                <button type="button" onclick="agregarTema()" class="btnCrear">+ Añadir tema</button>
+                <br><br>
+
+                <button id="btnCrear" type="submit" class="btnCrear">Guardar Curso</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/crear-curso.js"></script>
+</body>
+
+</html>

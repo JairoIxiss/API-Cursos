@@ -18,8 +18,13 @@ public class TemaService implements ITemaService{
     }
 
     @Override
-    public void editTema(Tema tem) {
-        this.saveTema(tem);
+    public void editTema(Long id, Tema temaNuevo) {
+        Tema temaEditar = this.findTema(id);
+
+        temaEditar.setNombre(temaNuevo.getNombre());
+        temaEditar.setDescripcion(temaNuevo.getDescripcion());
+
+        this.saveTema(temaEditar);
     }
 
     @Override

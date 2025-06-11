@@ -11,7 +11,7 @@ public interface ITemaService {
     
     public List<Tema> getTemas();
     
-    public void editTema(Tema tem);
+    public void editTema(Long id, Tema nuevoTema);
     
     public void deleteTema(Long id);        
     

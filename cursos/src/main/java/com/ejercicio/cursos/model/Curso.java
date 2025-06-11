@@ -1,10 +1,7 @@
 package com.ejercicio.cursos.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 import java.util.List;
 import lombok.Getter;
@@ -20,7 +17,8 @@ public class Curso {
     private String nombre;
     private String modalidad;
     private LocalDate fecha_finalizacion;
-    @OneToMany 
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "curso_id")
     private List <Tema> listaDeTemas;
     
     public Curso() {

@@ -12,7 +12,7 @@ public interface ICursoService {
     
     public Curso findCurso(Long id);
     
-    public void editCurso(Curso curs);
+    public void editCurso(Long id, Curso nuevoCurso);
     
     public void deleteCurso(Long id);
     

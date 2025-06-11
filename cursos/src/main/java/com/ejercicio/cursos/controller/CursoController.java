@@ -5,14 +5,10 @@ import com.ejercicio.cursos.model.Curso;
 import com.ejercicio.cursos.service.CursoService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin(origins = "http://127.0.0.1:5500")
 public class CursoController {
     @Autowired
     private CursoService curServ;
@@ -28,10 +24,10 @@ public class CursoController {
         return curServ.getCursos();
     }
     
-    @PutMapping("/cursos/editar")
-    public Curso editarCurso(@RequestBody Curso cur){
-        curServ.saveCurso(cur);
-        return curServ.findCurso(cur.getId_curso());
+    @PutMapping("/cursos/editar/{id}")
+    public Curso editarCurso(@PathVariable Long id, @RequestBody Curso cur){
+        curServ.editCurso(id, cur);
+        return curServ.findCurso(id);
     }
     
     @GetMapping("/cursos/tema/{id_curso}")
@@ -43,5 +39,10 @@ public class CursoController {
     public List<Curso> cursosJava (){
         return curServ.getCursosJava();
     }
-    
+
+    @DeleteMapping("/cursos/eliminar/{id}")
+    public String eliminarCurso (@PathVariable Long id){
+        curServ.deleteCurso(id);
+        return "Curso Eliminado";
+    }
 }

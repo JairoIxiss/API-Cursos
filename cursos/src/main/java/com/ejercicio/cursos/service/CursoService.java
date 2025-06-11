@@ -25,8 +25,15 @@ public class CursoService implements ICursoService{
     }
 
     @Override
-    public void editCurso(Curso curs) {
-        this.saveCurso(curs);
+    public void editCurso(Long id, Curso nuevoCurso) {
+        Curso curso = this.findCurso(id);
+
+        curso.setNombre(nuevoCurso.getNombre());
+        curso.setFecha_finalizacion(nuevoCurso.getFecha_finalizacion());
+        curso.setModalidad(nuevoCurso.getModalidad());
+        curso.setListaDeTemas(nuevoCurso.getListaDeTemas());
+
+        this.saveCurso(curso);
     }
 
     @Override

@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping ("/temas")
+@CrossOrigin(origins = "http://127.0.0.1:5500")
 public class TemaController {
     @Autowired
     private TemaService temServ;
@@ -35,10 +36,10 @@ public class TemaController {
         return "El tema se ha eliminado de forma correcta";
     }
 
-    @PutMapping("/editar")
-    public Tema editarTema(@RequestBody Tema tem){
-        temServ.editTema(tem);
-        return temServ.findTema(tem.getId_tema());
+    @PutMapping("/editar/{id}")
+    public Tema editarTema(@PathVariable Long id, @RequestBody Tema tem){
+        temServ.editTema(id, tem);
+        return temServ.findTema(id);
     }
     
 }
